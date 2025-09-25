@@ -1,9 +1,9 @@
 # mundoAnimals
 
-Este é um projeto acadêmico desenvolvido por mim, onde fui responsável tanto pelo desenvolvimento quanto pelo webdesign. O objetivo principal foi aplicar e testar minhas habilidades em HTML, CSS e JavaScript, criando uma experiência interativa e visualmente agradável.
+Este é um projeto acadêmico desenvolvido por mim, onde fui responsável tanto pelo desenvolvimento quanto pelo Web Design. O objetivo principal foi aplicar e testar minhas habilidades em HTML, CSS e JavaScript, criando uma experiência interativa e visualmente agradável.
 
 ## Sobre o Projeto
-- **Desenvolvimento e Webdesign:** Todo o layout, estrutura e funcionalidades foram criados por mim, sem o auxílio de ferramentas de inteligência artificial.
+- **Desenvolvimento e Web Design:** Todo o layout, estrutura e funcionalidades foram criados por mim, sem o auxílio de ferramentas de inteligência artificial.
 - **JavaScript:** Utilizado para testar e aprimorar minhas habilidades em programação front-end, adicionando interatividade ao site.
 - **Sem uso de IA:** Todo o código, design e decisões criativas foram feitos manualmente, reforçando o aprendizado prático.
 

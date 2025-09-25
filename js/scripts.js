@@ -11,6 +11,11 @@ menuToggle.addEventListener('click', () => {
     menuToggle.classList.toggle('active');    // Anima o ícone hamburger
     menu.classList.toggle('active');          // Mostra/esconde o menu
     document.body.classList.toggle('menu-open'); // Previne scroll quando menu está aberto
+    
+    // Adiciona efeito de vibração em dispositivos móveis
+    if (navigator.vibrate) {
+        navigator.vibrate(50);
+    }
 });
 
 // Fechar menu mobile ao clicar nos links de navegação
@@ -366,6 +371,51 @@ function createScrollProgress() {
 // Inicializa a barra de progresso
 createScrollProgress();
 
+// DETECÇÃO DE DISPOSITIVOS MÓVEIS
+function isMobileDevice() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || 
+           window.innerWidth <= 768;
+}
+
+// MELHORIAS PARA DISPOSITIVOS MÓVEIS
+if (isMobileDevice()) {
+    // Adiciona classe para identificar dispositivos móveis
+    document.body.classList.add('mobile-device');
+    
+    // Melhora a performance em dispositivos móveis
+    document.querySelectorAll('.card, .depoimento, .horario-card').forEach(element => {
+        element.style.willChange = 'transform';
+    });
+    
+    // Otimiza animações para dispositivos móveis
+    const style = document.createElement('style');
+    style.textContent = `
+        .mobile-device .card:hover,
+        .mobile-device .depoimento:hover,
+        .mobile-device .horario-card:hover {
+            transform: none;
+        }
+        
+        .mobile-device .card:active,
+        .mobile-device .depoimento:active,
+        .mobile-device .horario-card:active {
+            transform: scale(0.98);
+            transition: transform 0.1s ease;
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+// PREVENÇÃO DE ZOOM DUPLO TOQUE EM DISPOSITIVOS MÓVEIS
+let lastTouchEnd = 0;
+document.addEventListener('touchend', function (event) {
+    const now = (new Date()).getTime();
+    if (now - lastTouchEnd <= 300) {
+        event.preventDefault();
+    }
+    lastTouchEnd = now;
+}, false);
+
 // MENSAGEM DE CONSOLE - Confirmação de carregamento
-console.log('🐾 Amor de Bichos - Site carregado com sucesso!');
+console.log('🐾 Mundo Animals - Site carregado com sucesso!');
 
